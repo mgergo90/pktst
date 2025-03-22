@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      target: development
+    working_dir: /app
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    ports:
+      - '3000:3000'
+
+  db:
+    image: bitnami/postgresql:17.4.0
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - '5432:5432'
+    volumes:
+      - my-datavolume:/var/lib/mysql
+
+volumes:
+  my-datavolume:

@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Running pre-push test inside Docker..."
+docker compose run --rm -T api npm run test
+
+status=$?
+
+if [ $status -ne 0 ]; then
+  echo "Tests failed! Fix the issues before committing."
+  exit 1
+fi
+
+echo "Tests passed! Proceeding with push..."
+exit 0

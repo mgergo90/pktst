@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Running pre-commit lint checks inside Docker..."
+docker compose run --rm -T api npm run lint $(git diff --cached --name-only --diff-filter=ACMR | grep '^src/' | sed 's| |\\ |g')
+
+status=$?
+
+if [ $status -ne 0 ]; then
+  echo "Linting failed! Fix the issues before committing."
+  exit 1
+fi
+
+echo "Lint passed! Proceeding with commit..."
+exit 0
