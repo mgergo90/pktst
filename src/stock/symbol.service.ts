@@ -10,7 +10,7 @@ export class SymbolService {
   constructor() {
     if (!this.apiKey || !this.baseUrl) {
       throw new HttpException(
-        'API_KEY or ALPHA_VANTAGE_API_URL is not set',
+        'API_KEY or API_URL is not set',
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

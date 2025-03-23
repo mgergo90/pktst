@@ -12,14 +12,14 @@ import { Stock } from './stock.entity';
 @Index('symbol_unique', ['symbol'], { unique: true }) // Ensures 'symbol' is unique
 export class Symbol {
   @PrimaryGeneratedColumn()
-  id: number; // Unique ID (auto-incremented primary key)
+  id: number;
 
   @Column({ type: 'varchar', length: 50, unique: true })
-  symbol: string; // Symbol field (unique)
+  symbol: string;
 
   @CreateDateColumn()
-  createdAt: Date; // Created timestamp (automatically generated)
+  createdAt: Date;
 
-  @OneToMany(() => Stock, (stock) => stock.symbol_id, { lazy: true }) // One-to-many relationship
+  @OneToMany(() => Stock, (stock) => stock.symbol_id, { lazy: true })
   stockPrices: Promise<Stock[]>;
 }

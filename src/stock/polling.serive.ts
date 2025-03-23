@@ -56,7 +56,7 @@ export class PollingService {
                       return of(null);
                     }),
                     catchError((error) => {
-                      // possible error due to duplication
+                      // possible error due to duplication after market close
                       this.logger.error(
                         `Failed to save stock data for symbol ${symbol.symbol}, ${(error as Error)?.message}`,
                       );
