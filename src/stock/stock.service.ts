@@ -52,7 +52,8 @@ export class StockService {
     }
     return {
       symbol,
-      data: stocks,
+      price: +stocks[0].price,
+      updated: stocks[0].created,
       average:
         Math.round(
           (stocks.reduce((acc, curr) => acc + +curr.price, 0) / stocks.length) *

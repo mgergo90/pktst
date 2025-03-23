@@ -16,8 +16,9 @@ export class StockController {
         summary: 'Get the moving avarege of a symbol',
         value: {
           symbol: 'IBM',
-          id: 2,
-          createdAt: '2025-03-22T12:32:57.537Z',
+          price: 243.37,
+          updated: '2025-03-23T10:03:00.626Z',
+          average: 243.87,
         },
       },
     },

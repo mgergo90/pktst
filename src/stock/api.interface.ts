@@ -1,5 +1,3 @@
-import { Stock } from './entities/stock.entity';
-
 export interface ApiResponse {
   c: number;
   d: number;
@@ -20,5 +18,6 @@ export interface StockResponse {
 export interface StockAvarageResponse {
   symbol: string;
   average: number;
-  data: Stock[];
+  price: number;
+  updated: Date;
 }
