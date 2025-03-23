@@ -18,6 +18,9 @@ Set the finnhub API key in the new env file, then:
 
 ```bash
 $ docker compose up -d
+
+# Setup git hooks with husky
+$ npx husky
 ```
 
 ## Project setup without docker
@@ -35,6 +38,9 @@ $ npm run install
 
 # development
 $ npm run start
+
+# Setup git hooks with husky
+$ npm run husky
 ```
 
 ## Run tests
@@ -49,3 +55,7 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Swagger documentation
+
+<a href="http://localhost:3000/api" target="blank">http://localhost:3000/api</a>
