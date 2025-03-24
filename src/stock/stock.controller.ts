@@ -25,8 +25,7 @@ export class StockController {
   })
   @ApiResponse({
     status: 404,
-    description:
-      'There is not enough data collected to calculate the moving average',
+    description: 'No data found for the selected symbol',
     examples: {
       'Not enough data': {
         summary:
